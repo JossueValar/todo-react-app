@@ -1,0 +1,16 @@
+.app {
+  padding: 30px;
+  background-color: floralwhite;
+  height: 100vh;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.todo {
+  align-items: center;
+  display: flex;
+  font-size: 18px;
+  justify-content: space-between;
+}
