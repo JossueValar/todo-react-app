@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   const [todos, setTodos] = React.useState([
     {
-      text: "This is a sample todo",
+      text: "This is a sample to-do",
       isDone: false
     }
   ]);
@@ -31,7 +31,7 @@ function App() {
   return (
     <div className="app">
       <div className="container">
-        <h1 className="text-center mb-4">Todo List</h1>
+        <h1 className="text-center mb-4">To-Do List</h1>
         <FormTodo addTodo={addTodo} />
         <div>
           {todos.map((todo, index) => (
@@ -73,6 +73,13 @@ function FormTodo({ addTodo }) {
 
   const handleSubmit = e => {
     e.preventDefault();
+    // value = "hola"
+    // value es true
+    // !value es false, no corre if
+    //------
+    // value = ""
+    // value es false
+    // !value es true, corre if
     if (!value) return;
     addTodo(value);
     setValue("");
@@ -81,8 +88,8 @@ function FormTodo({ addTodo }) {
   return (
     <Form onSubmit={handleSubmit}> 
     <Form.Group>
-      <Form.Label><b>Add Todo</b></Form.Label>
-      <Form.Control type="text" className="input" value={value} onChange={e => setValue(e.target.value)} placeholder="Add new todo" />
+      <Form.Label><b>Add To-Do</b></Form.Label>
+      <Form.Control type="text" className="input" value={value} onChange={e => setValue(e.target.value)} placeholder="Add new to-do" />
     </Form.Group>
     <Button variant="primary mb-3" type="submit">
       Submit
